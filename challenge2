@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.Vector;
+
+/**
+ *
+ * @author Invitado
+ */
+public class reversa {
+         public static void main(String[] args) {
+              myrevers("eye");
+         }
+    public static ArrayList myrevers(String Data){
+        Vector palindro = new Vector();
+        ArrayList result = new ArrayList();
+        String resul = "";
+        int ok = 0;
+        int y = 0;
+        for (int x=Data.length()-1;x>=0;x--){
+            palindro.add(Data.charAt(x));
+        }
+        y = palindro.size()-1;
+        for (int x=0;x<palindro.size();x++){
+            resul+= palindro.elementAt(x).toString();
+            if (palindro.elementAt(x).toString().compareTo(palindro.elementAt(y).toString())!=0){
+                ok=1;
+            }
+            y--;
+        }
+        result.add(resul);
+        if (ok==0){
+            result.add("Palindrome");
+        }else{
+            result.add("Not a Palindrome");
+        }
+        System.out.println(result);
+        return result;
+    }
+    
+}
