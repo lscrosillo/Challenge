@@ -1,3 +1,4 @@
+Challenge 1
 A.	What is your design and implementation?
 My main class name is Challenge1. I create the Randomizer class how created a queue of 100 integer numbers who are going to be the 
 initial input for the process (I decided to use 100 for my queue but this value may change for others examples). Then we create an object
@@ -118,3 +119,22 @@ C. Further work – if you have all the time in the world how would you implemen
 I wont put a limit number i will ask the user to choose how many numbers wants or maybe when he press a key the process ends.
 I would take the branches out in the final result.
 
+
+
+
+
+
+
+Challenge 2
+A.	What is your design and implementation?
+Im using both vectors and ArrayList just like examples, in my first loop i take every character from my String from my last character to
+my first character, I do this to put in a structure in a reverse order everything. my sencond loop allow me to check is the word is 
+palyndrome by comparing the first with the last, then the second from left with the second from the right and continue until it checks
+every single character if one of them is different then the word is not palyndrome 
+
+B. Output Example
+[eye, Palindrome]
+
+C. Further work – if you have all the time in the world how would you implement
+Ill not check every character just until the half
+Ill not use two loops
