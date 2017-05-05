@@ -1,0 +1,91 @@
+import java.util.Iterator;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Random;
+
+/**
+ *
+ * @author Invitado
+ */
+public class Challenge1 {
+
+     public static void main(String[] args) {
+        Randomizer ran = new Randomizer();
+        Queue<Value> outQ = new Prime().RunPrime(ran.randomGenerate());
+        System.out.println("Values" );
+        System.out.println(outQ.toString().replaceAll(",", ""));
+    }
+
+    private static class Value implements Comparable<Value> {
+
+        private int data;
+        boolean isPrime;
+
+        public Value(int data, boolean isPrime) {
+            this.data = data;
+            this.isPrime = isPrime;
+        }
+
+        @Override
+        public int compareTo(Value o) {
+            if (o == null) {
+                return 1;
+            }
+            return this.data - o.data;
+        }
+
+        @Override
+        public String toString() {
+            return "Number=" + data + " Is Prime=" + isPrime + '\n';
+        }
+    }
+
+    private static class Prime {
+
+        Queue<Value> primeQ = new PriorityQueue<>();
+
+        public Queue<Value> RunPrime(Queue<Integer> x) {
+            boolean flag;
+            try{
+                Iterator<Integer> itr = x.iterator();
+                while (itr.hasNext()) {
+                    Value val;
+                    int number = (int) itr.next();
+                    int srt = (int) Math.sqrt((double) number);
+                    if (number == 1) {
+                        flag = true;
+                    } else {
+                        flag = true;
+                        for (int i = 2; i <= srt; i++) {
+                            if (number % i == 0) {
+                                flag = false;
+                            }
+                        }
+                    }
+                    val = new Value(number, flag);
+
+                    primeQ.add(val);
+
+                }
+            }catch(Exception e){
+                System.err.println("Something happend!!! Please check the process: "+ e);
+            }
+            return primeQ;
+        }
+    }
+
+    private static class Randomizer {
+
+        public Queue<Integer> randomGenerate() {
+            Queue<Integer> q = new PriorityQueue<>();
+            int num;
+            Random rand = new Random();
+            for (int k = 0; k < 100; k++) {
+                num = rand.nextInt(Integer.MAX_VALUE);
+                q.add(num);
+            }
+            return q;
+        }
+    }
+}
+
