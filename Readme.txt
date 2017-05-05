@@ -138,3 +138,19 @@ B. Output Example
 C. Further work – if you have all the time in the world how would you implement
 Ill not check every character just until the half
 Ill not use two loops
+
+
+Challenge 3
+A.	What is your design and implementation?
+I create two methods, in the first one "obtaindDB" i supposed to connect to a DB to obtain the information and store it on one matrix,
+every row represent one row in the table, the first column is id, second is name, third is phone and fourth is address, In the second method imprime I use a loop to print all the information in the ArrayList. 
+
+B. Output Example
+Id: 1 Name: Frank Phone: 111111111 Adress: somewhere in the jungle
+Id: 2 Name: Susy Phone: 2222222222 Adress: She is behiind you
+Id: 3 Name: Peter Phone: 3333333333 Adress: He is hidding
+
+C. Further work – if you have all the time in the world how would you implement
+Ill use a DB
+Ill validate all the fields
+
