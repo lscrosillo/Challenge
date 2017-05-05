@@ -1,0 +1,65 @@
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Invitado
+ */
+public class Challenge3 {
+         public static void main(String[] args) {
+              ArrayList data = obtaindDB();
+              imprime(data);
+         }
+    public static ArrayList obtaindDB(){
+ 
+        ArrayList result = new ArrayList();
+        ArrayList cols = new ArrayList(4);
+
+        String id  ="1";
+        String name  ="Frank";
+        String phone  ="111111111";
+        String adress  ="somewhere in the jungle";
+        cols.add(id);
+        cols.add(name);
+        cols.add(phone);
+        cols.add(adress);
+        result.add(cols);
+        cols = new ArrayList(4);
+        id ="2";
+        name= "Susy";
+        phone = "2222222222";
+        adress= "She is behiind you";
+        cols.add(id);
+        cols.add(name);
+        cols.add(phone);
+        cols.add(adress);
+        cols.add(adress);
+        result.add(cols);
+        cols = new ArrayList(4);
+        id ="3";
+        name= "Peter";
+        phone = "3333333333";
+        adress= "He is hidding";
+        cols.add(id);
+        cols.add(name);
+        cols.add(phone);
+        cols.add(adress);
+        cols.add(adress);
+        result.add(cols);
+        return result;
+    }
+ 
+     public static void imprime (ArrayList Data){
+         String id;
+         String name;
+         String phone;
+         String adress;
+        for (int i=0;i<Data.size();i++){
+            ArrayList temp = (ArrayList)Data.get(i);
+            id = temp.get(0).toString();
+            name = String.valueOf(temp.get(1));
+            phone = (String)temp.get(2).toString();
+            adress = temp.get(3) + "";
+            System.out.println("Id: " + id + " Name: "+name  + " Phone: "+phone + " Adress: "+adress  );
+        }
+    }
+     
